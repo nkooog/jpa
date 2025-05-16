@@ -1,8 +1,7 @@
-package com.example.jpa.controller;
+package com.example.jpa.user.web;
 
-import com.example.jpa.entity.Users;
-import com.example.jpa.service.UserService;
-import com.example.jpa.service.vo.UsersVO;
+import com.example.jpa.user.service.UserService;
+import com.example.jpa.user.service.model.vo.UsersVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

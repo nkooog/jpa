@@ -1,18 +1,18 @@
-package com.example.jpa.repository;
+package com.example.jpa.user.repository.impl;
 
-import com.example.jpa.entity.QUsers;
-import com.example.jpa.entity.Users;
-import com.example.jpa.service.vo.UsersVO;
+import com.example.jpa.user.repository.UserRepositoryCustom;
+import com.example.jpa.user.service.model.entity.QUsers;
+import com.example.jpa.user.service.model.entity.Users;
+import com.example.jpa.user.service.model.vo.UsersVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
 @RequiredArgsConstructor
-public class UserRepositoryImpl implements UserRepositoryCustom{
+public class UserRepositoryImpl implements UserRepositoryCustom {
 
 	private final ObjectMapper objectMapper;
 	private final JPAQueryFactory jpaQueryFactory;
@@ -25,8 +25,8 @@ public class UserRepositoryImpl implements UserRepositoryCustom{
 				.select(this.qUsers)
 				.from(this.qUsers)
 				.where(
-						 this.qUsers.id.tenantId.eq(tenantId)
-						,this.qUsers.id.usrId.eq(usrId)
+							this.qUsers.usersId.tenant_id.eq(tenantId)
+						,   this.qUsers.usersId.usr_id.eq(usrId)
 				)
 				.fetchOne();
 

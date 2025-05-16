@@ -1,17 +1,12 @@
-package com.example.jpa.service;
+package com.example.jpa.user.service;
 
-import com.example.jpa.entity.Users;
-import com.example.jpa.repository.UserRepository;
-import com.example.jpa.repository.UserRepositoryImpl;
-import com.example.jpa.service.vo.UsersVO;
+import com.example.jpa.user.repository.impl.UserRepositoryImpl;
+import com.example.jpa.user.service.model.vo.UsersVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-
-	@Autowired
-	UserRepository repository;
 
 	@Autowired
 	UserRepositoryImpl userRepository;
