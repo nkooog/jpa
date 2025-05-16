@@ -1,5 +1,6 @@
 package com.example.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -20,4 +21,14 @@ public class Users {
 
 	@Column(name = "scrt_no")
 	private String scrt_no;
+
+	@JsonProperty("tenant_id")
+	public String getTenantId() {
+		return id.getTenantId();
+	}
+
+	@JsonProperty("usr_id")
+	public String getUsrId() {
+		return id.getUsrId();
+	}
 }
